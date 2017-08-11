@@ -3,6 +3,11 @@ FROM ubuntu:16.04
 MAINTAINER Brett McGinnis <brettmcgin@gmail.com>
 
 RUN apt-get update && \
+    apt-get install -y software-properties-common
+
+RUN add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
+
+RUN apt-get update && \
     apt-get install -y \
     qbittorrent-nox
 
